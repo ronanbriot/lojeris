@@ -22,6 +22,10 @@ strong {
     color: #fff;
 }
 
+.tag.reduc{
+    background-color: #bada55;
+}
+
 footer.site-footer {
     margin-top: 10px;
     background-color: #073855;
