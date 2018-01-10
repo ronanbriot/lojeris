@@ -1,10 +1,10 @@
 <html>
     <head>
-        <title>Login</title>
+        <title>Register</title>
     </head>
     <body>
 
-        <h1>Login</h1>
+        <h1>Créer un compte</h1>
 
         <form action="index.php" method="POST">
             <div>
@@ -17,8 +17,6 @@
             </div>
             <input type="submit">
         </form>
-
-        <a href="register.php">Créer un compte</a>
 
     </body>
 </html>

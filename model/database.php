@@ -4,7 +4,7 @@
  * @return array Liste des logements
  */
 
-require_once "config/parameters.php";
+require_once __DIR__ . "/../config/parameters.php";
 try {
     $connection = new PDO("mysql:dbname=" . $param["dbname"] . ";host=" . $param["host"], $param["user"], $param["pass"]);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

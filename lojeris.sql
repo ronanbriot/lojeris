@@ -41,4 +41,6 @@ SELECT
     image.alt
 FROM image
 WHERE image.logement_id =1;
+
+SELECT SHA1('pjehan');
     
