@@ -4,35 +4,23 @@
  * @return array Liste des logements
  */
 
-function getAllLogements() : array {
-    $liste_logements[0] = [
-    "titre" => "Gare sud",
-    "prix" => 345000,
-    "dateCreation" => new DateTime("2017-06-12"),
-    "type" => "Appartement",
-    "taille" => 320,
-    "nb_chambre" => 2,
-    "image" => "property-01.jpg"
-];
+require_once "config/parameters.php";
+try {
+    $connection = new PDO("mysql:dbname=" . $param["dbname"] . ";host=" . $param["host"], $param["user"], $param["pass"]);
+    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    $connection->exec("SET names utf8");
+    $connection->exec("SET lc_time_names = 'fr_FR'");
+} catch (PDOException $exc) {
+    echo "Erreur de connexion à la base de donnees";
+    die;
+}
 
-$liste_logements[1] = [
-    "titre" => "Brequigny",
-    "prix" => 345000,
-    "dateCreation" => new DateTime("2017-08-12"),
-    "type" => "Maison",
-    "taille" => 220,
-    "nb_chambre" => 3,
-    "image" => "property-02.jpg"
-];
-
-$liste_logements[2] = [
-    "titre" => "Paris",
-    "prix" => 348000,
-    "dateCreation" => new DateTime("2017-09-12"),
-    "type" => "Maison",
-    "taille" => 280,
-    "nb_chambre" => 2,
-    "image" => "property-03.jpg"
-];
-return $liste_logements;
+$entity_dir = __DIR__ . "/entity/";
+$files = scandir($entity_dir);
+foreach ($files as $file) {
+    if (is_file($entity_dir . $file)
+            && pathinfo($entity_dir . $file, PATHINFO_EXTENSION) == "php") {
+        require_once $entity_dir . $file;
+    }
 }

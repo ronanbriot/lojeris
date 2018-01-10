@@ -2,7 +2,12 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>Lojeris</title>
+        <title>Lojeris - <?php echo $header["titre"]; ?></title>
+        <?php if (isset($header["css"])) : ?>
+        <?php foreach ($header["css"] as $css) : ?>
+          <link rel="stylesheet" href="<?php echo $css; ?>">
+        <?php endforeach; ?>
+      <?php endif; ?>
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
@@ -38,7 +43,7 @@
                 </div>
             </div>
             <div class="container main-header">
-                <a href="index.html" class="logo">
+                <a href="index.php" class="logo">
                     <span class="fa-stack fa-lg">
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-home fa-stack-1x fa-inverse"></i>
