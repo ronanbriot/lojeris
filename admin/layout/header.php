@@ -11,6 +11,8 @@ require_once __DIR__ . "/../security.php";
 
         <link rel="stylesheet" href="<?php echo $param['site_url'] ?>admin/plugins/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo $param['site_url'] ?>admin/plugins/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="<?php echo $param['site_url'] ?>admin/plugins/select2/css/select2.min.css">
+        <link rel="stylesheet" href="<?php echo $param['site_url'] ?>admin/plugins/datatables/datatables.min.css">
         <link rel="stylesheet" href="<?php echo $param['site_url'] ?>admin/css/custom.css">
     </head>
     <body>
@@ -60,7 +62,7 @@ require_once __DIR__ . "/../security.php";
                             <a class="nav-link" href="<?php echo $param['site_url'] ?>admin/">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $param['site_url'] ?>admin/crud/evenement/">Evénements</a>
+                            <a class="nav-link" href="<?php echo $param['site_url'] ?>admin/crud/logement/">Logements</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo $param['site_url'] ?>admin/crud/type/">Types</a>

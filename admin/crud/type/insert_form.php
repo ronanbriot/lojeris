@@ -10,7 +10,7 @@ require_once __DIR__ . "/../../layout/header.php";
         <label>Libellé</label>
         <input type="text" name="libelle" class="form-control">
     </div>
-    
+
     <button type="submit" class="btn btn-success">
         <i class="fa fa-check"></i>
         Enregistrer

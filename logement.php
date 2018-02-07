@@ -2,8 +2,9 @@
 require_once 'model/database.php';
 
 $id = $_GET["id"];
-$logement = getLogement($id);
+$logement = getOneLogement($id);
 $liste_images = getAllImagesByLogement($id);
+$liste_commerciaux = getAllCommerciauxByLogement($id);
 
 $header["titre"] = $logement["libelle"];
 $header["css"] = [
@@ -24,7 +25,18 @@ require_once 'layout/header.php';?>
     <p>
       <?php echo $logement["description"]; ?>
     </p>
+
+
+      <ul>
+
+          <?php foreach ($liste_commerciaux as $commercial): ?>
+            <li>
+          <?php echo $commercial["nom_prenom"] ?>
+        </li>
+          <?php endforeach; ?>
+      </ul>
 </section>
+
 
 <?php
 $footer["js"] = [
